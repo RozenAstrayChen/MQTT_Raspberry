@@ -3,7 +3,7 @@ from module.Rozen_Object import Rozen_Object
 import platform
 import time
 
-Node_Red_Ip = "192.168.0.10"
+Node_Red_Ip = "localhost"
 Node_Red_Port = 1883
 
 if(platform.system() == 'Linux'):
