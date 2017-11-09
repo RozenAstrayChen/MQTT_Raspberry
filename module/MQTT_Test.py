@@ -11,12 +11,16 @@ class My_MQTT():
 		self.client.on_connect = self.On_Connect
 		self.client.on_message = self.On_Message
 
+	def __del__(self):
+		self.client.stop()
+
 	def On_Connect(self, client, userdata, flag, rc):
 		print("Connect with result code "+ str(rc))
-		client.subscribe("LED")
+		client.subscribe("Servo")
 
 	def On_Message(self, client, userdata, msg):
 		print(msg.topic + " " + str(msg.payload))
+
 	def Edit_Ip(self,ip):
 		self.ip = ip
 	def Edit_Port(self,port):
@@ -25,7 +29,11 @@ class My_MQTT():
 	def Test_Connect(self):
 		self.client.connect(self.ip, port=self.port, keepalive=60)
 		self.client.loop_forever()
-	def Publish(self,data):
+
+	def Subscribe(self,topic):
+		client.subscribe(topic)
+		
+	def Publish(self,topic,data):
 		loop_time = 0;
 		self.client.connect(self.ip, port=self.port, keepalive=60)
 		"""
@@ -36,12 +44,13 @@ class My_MQTT():
 		"""
 		self.client.loop_start()
 		while True:
-			time.sleep(0.5)
-			self.client.publish("temp", data)
+			time.sleep(1)
+			self.client.publish(topic, data)
 			if(loop_time != 10):
 				loop_time = loop_time+1
 			else:
 				self.client.loop_stop(force=False)
 				break
+
 
 

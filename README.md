@@ -1,20 +1,12 @@
 # MQTT on Raspberry Pi
 工研院Raspberry pi課程使用
 
-## BMP180
-Using the Adafruit BMP Python Lib
-```shell==
-sudo apt-get update
-sudo apt-get install git build-essential python-dev python-smbus
-git clone https://github.com/adafruit/Adafruit_Python_BMP.git
-cd Adafruit_Python_BMP
-sudo python setup.py install
-```
-[follw this pdf](https://cdn-learn.adafruit.com/downloads/pdf/using-the-bmp085-with-raspberry-pi.pdf)
-
-### If you havn't GPIO driver , [clone this](https://github.com/adafruit/Adafruit_Python_GPIO) 
-
 ## Commend
+clone this 
+```
+git clone https://github.com/RozenAstrayChen/MQTT_Raspberry.git
+cd MQTT_Raspberry
+```
 build this project
 ```
 make all
@@ -27,6 +19,19 @@ use scp copy to your target
 ```
 make scp
 ```
+
+## BMP180
+Using the Adafruit BMP Python Lib
+```shell==
+sudo apt-get update
+sudo apt-get install git build-essential python-dev python-smbus
+git clone https://github.com/adafruit/Adafruit_Python_BMP.git
+cd Adafruit_Python_BMP
+sudo python setup.py install
+```
+[follw this pdf](https://cdn-learn.adafruit.com/downloads/pdf/using-the-bmp085-with-raspberry-pi.pdf)
+
+### If you havn't GPIO driver , [clone this](https://github.com/adafruit/Adafruit_Python_GPIO) 
 
 ## Tutorial
 
@@ -69,6 +74,7 @@ cd MQTT_Raspberry
 make
 ```
 
-
-
 ## MQTT
+
+## Node Red
+node red clipboard in __Clipboard.txt__
