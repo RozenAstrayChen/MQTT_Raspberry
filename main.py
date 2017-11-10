@@ -28,7 +28,7 @@ if(platform.system() == 'Linux'):
 		time.sleep(1)
 	"""
 	obj = Rozen_Object(Node_Red_Ip,Node_Red_Port,18)
-	obj.Start_Up_Temp("Temp",obj.read_temperature())
+	obj.Start_Up_Temp("Temp",obj)
 	
 elif(platform.system() == 'Darwin'):
 	print('use on ' + platform.system() + ' not test Sensor')

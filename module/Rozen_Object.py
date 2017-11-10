@@ -32,7 +32,7 @@ class Rozen_Object(My_MQTT,BMP085,Servo):
 		#your code and if you add code need remove `pass`
 		pass
 
-	def Start_Up_Temp(self,topic,data):
+	def Start_Up_Temp(self,topic,obj):
 		loop_time = 0;
 		self.client.connect(self.ip, port=self.port, keepalive=60)
 		"""
@@ -44,6 +44,7 @@ class Rozen_Object(My_MQTT,BMP085,Servo):
 		self.client.loop_start()
 		while True:
 			time.sleep(1)
+			data = obj.read_temperature()
 			self.client.publish(topic, data)
 			if(loop_time != 10):
 				#loop_time = loop_time+1
