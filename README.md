@@ -56,6 +56,12 @@ git clone https://github.com/RozenAstrayChen/MQTT_Raspberry.git
 cd MQTT_Raspberry
 make
 ```
+### MQTT Client 
+使用 [paho-mqtt](https://pypi.python.org/pypi/paho-mqtt)
+安裝:
+```shell==
+sudo pip install paho-mqtt
+```
 
 ### Node Red
 先更新和安裝npm 套件
