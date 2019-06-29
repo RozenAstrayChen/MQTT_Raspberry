@@ -2,6 +2,7 @@ import time
 import RPi.GPIO as GPIO
 
 # default
+GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(18, GPIO.OUT)
 pwm = GPIO.PWM(18, 100)
